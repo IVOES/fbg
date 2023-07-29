@@ -1,0 +1,1670 @@
+custom_backend/dispmanx/fbg_dispmanx.c:37:9: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+        fprintf(stderr, "fbg_dispmanxSetup: vc_dispmanx_display_open failed for display %i\n", displayNumber);
+        ^
+custom_backend/dispmanx/fbg_dispmanx.c:45:9: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+        fprintf(stderr, "fbg_dispmanxSetup: vc_dispmanx_display_get_info failed for display %i\n", displayNumber);
+        ^
+custom_backend/dispmanx/fbg_dispmanx.c:61:9: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+        fprintf(stderr, "fbg_dispmanxSetup: vc_dispmanx_resource_create failed for display %i\n", displayNumber);
+        ^
+custom_backend/dispmanx/fbg_dispmanx.c:69:9: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+        fprintf(stderr, "fbg_dispmanxSetup: vc_dispmanx_resource_create failed for display %i\n", displayNumber);
+        ^
+custom_backend/dispmanx/fbg_dispmanx.c:78:9: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+        fprintf(stderr, "fbg_dispmanxSetup: vc_dispmanx_update_start failed for display %i\n", displayNumber);
+        ^
+custom_backend/dispmanx/fbg_dispmanx.c:90:9: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+        fprintf(stderr, "fbg_dispmanxSetup: src/dst rect malloc failed for display %i\n", displayNumber);
+        ^
+custom_backend/dispmanx/fbg_dispmanx.c:114:9: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+        fprintf(stderr, "fbg_dispmanxSetup: vc_dispmanx_element_add failed for display %i\n", displayNumber);
+        ^
+custom_backend/dispmanx/fbg_dispmanx.c:124:12: style: Variable 'result' is assigned a value that is never used. [unreadVariable]
+    result = vc_dispmanx_update_submit_sync(dispmanx_context->update);
+           ^
+custom_backend/dispmanx/fbg_dispmanx.c:211:13: style: Variable 'ret' is assigned a value that is never used. [unreadVariable]
+    int ret = vc_dispmanx_resource_write_data(dispmanx_context->back_resource, dispmanx_context->resource_type, dispmanx_context->pitch, fbg->back_buffer, dispmanx_context->dst_rect);
+            ^
+custom_backend/dispmanx/fbg_dispmanx.c:16:84: error: Unmatched '{'. Configuration: 'FBG_MMAL'. [syntaxError]
+struct _fbg *fbg_dispmanxSetup(uint32_t displayNumber, VC_IMAGE_TYPE_T image_type) {
+                                                                                   ^
+custom_backend/dispmanx_parallel.c:175:16: style: Variable 'result' is reassigned a value before the old one has been used. [redundantAssignment]
+        result = vc_dispmanx_resource_delete(front_resources[i]);
+               ^
+custom_backend/dispmanx_parallel.c:174:16: note: result is assigned
+        result = vc_dispmanx_resource_delete(back_resources[i]);
+               ^
+custom_backend/dispmanx_parallel.c:175:16: note: result is overwritten
+        result = vc_dispmanx_resource_delete(front_resources[i]);
+               ^
+custom_backend/dispmanx_parallel.c:176:16: style: Variable 'result' is reassigned a value before the old one has been used. [redundantAssignment]
+        result = vc_dispmanx_element_remove(dispmanx_context->update, elems[i]);
+               ^
+custom_backend/dispmanx_parallel.c:175:16: note: result is assigned
+        result = vc_dispmanx_resource_delete(front_resources[i]);
+               ^
+custom_backend/dispmanx_parallel.c:176:16: note: result is overwritten
+        result = vc_dispmanx_element_remove(dispmanx_context->update, elems[i]);
+               ^
+custom_backend/dispmanx_parallel.c:172:9: style: The scope of the variable 'result' can be reduced. [variableScope]
+    int result;
+        ^
+custom_backend/dispmanx_parallel.c:152:13: style: Variable 'ret' is assigned a value that is never used. [unreadVariable]
+    int ret = vc_dispmanx_resource_write_data(back_resources[task_id - 1], dispmanx_context->resource_type, dispmanx_context->pitch, buffer, dispmanx_context->dst_rect);
+            ^
+custom_backend/dispmanx_parallel.c:176:16: style: Variable 'result' is assigned a value that is never used. [unreadVariable]
+        result = vc_dispmanx_element_remove(dispmanx_context->update, elems[i]);
+               ^
+custom_backend/dispmanx_pure_parallel.c:41:12: style: Variable 'xx' is assigned a value that is never used. [unreadVariable]
+    int xx = 0, yy = 0, w3 = fbg->width * fbg->components;
+           ^
+custom_backend/dispmanx_pure_parallel.c:69:25: style: Variable 'my_fbg' is assigned a value that is never used. [unreadVariable]
+    struct _fbg *my_fbg = fbg;
+                        ^
+custom_backend/fbdev/fbg_fbdev.c:31:9: error: Memory leak: fbdev_context [memleak]
+        return NULL;
+        ^
+custom_backend/fbdev/fbg_fbdev.c:177:0: information: Skipping configuration 'FBIO_WAITFORVSYNC' since the value of 'FBIO_WAITFORVSYNC' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    ioctl(fbdev_context->fd, FBIO_WAITFORVSYNC, &dummy);
+^
+custom_backend/glfw/fbg_glfw.c:190:3: error: Common realloc mistake: 'fbg_contexts' nulled but not freed upon failure [memleakOnRealloc]
+  fbg_contexts = (struct _fbg **)realloc(fbg_contexts, sizeof(struct _fbg *) * fbg_contexts_count);
+  ^
+custom_backend/glfw/fbg_glfw.c:74:90: style:inconclusive: Function 'fbg_glfwSetup' argument 5 names different: declaration 'monitor' definition 'monitor_id'. [funcArgNamesDifferent]
+struct _fbg *fbg_glfwSetup(int width, int height, int components, const char *title, int monitor_id, int fullscreen, int ssaa) {
+                                                                                         ^
+custom_backend/glfw/fbg_glfw.h:78:101: note: Function 'fbg_glfwSetup' argument 5 names different: declaration 'monitor' definition 'monitor_id'.
+    extern struct _fbg *fbg_glfwSetup(int width, int height, int components, const char *title, int monitor, int fullscreen, int ssaa);
+                                                                                                    ^
+custom_backend/glfw/fbg_glfw.c:74:90: note: Function 'fbg_glfwSetup' argument 5 names different: declaration 'monitor' definition 'monitor_id'.
+struct _fbg *fbg_glfwSetup(int width, int height, int components, const char *title, int monitor_id, int fullscreen, int ssaa) {
+                                                                                         ^
+custom_backend/glfw/glew/glew.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 1209 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+custom_backend/glfw/glew/glew.c:16258:17: style: The scope of the variable 'end' can be reduced. [variableScope]
+    const char *end;
+                ^
+custom_backend/glfw/glew/glew.c:16259:17: style: The scope of the variable 'i' can be reduced. [variableScope]
+    const char *i;
+                ^
+custom_backend/glfw/glew/glew.c:16261:10: style: The scope of the variable 'ext' can be reduced. [variableScope]
+    char ext[128];
+         ^
+custom_backend/glfw/glew/glew.c:16262:16: style: The scope of the variable 'enable' can be reduced. [variableScope]
+    GLboolean *enable;
+               ^
+custom_backend/glfw/glew/glew.c:16221:11: style: Local variable 'n' shadows outer variable [shadowVariable]
+    GLint n = 0;
+          ^
+custom_backend/glfw/glew/glew.c:16165:10: note: Shadowed declaration
+  size_t n;
+         ^
+custom_backend/glfw/glew/glew.c:16221:11: note: Shadow variable
+    GLint n = 0;
+          ^
+custom_backend/glfw/glew/glew.c:20577:10: style: Variable 'extEnd' is assigned a value that is never used. [unreadVariable]
+  extEnd = extStart + _glewStrLen(extStart);
+         ^
+custom_backend/glfw/glew/glew.c:289:38: warning: The address of local variable 'pos' might be accessed at non-zero index. [objectIndex]
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:27677:27: note: Address of variable taken here.
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"blob_cache", 10))
+                          ^
+custom_backend/glfw/glew/glew.c:27677:27: note: Calling function '_glewStrSame3', 1st argument '&pos' value is lifetime=pos
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"blob_cache", 10))
+                          ^
+custom_backend/glfw/glew/glew.c:289:38: note: The address of local variable 'pos' might be accessed at non-zero index.
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:289:38: warning: The address of local variable 'pos' might be accessed at non-zero index. [objectIndex]
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:27684:27: note: Address of variable taken here.
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"create_native_client_buffer", 27))
+                          ^
+custom_backend/glfw/glew/glew.c:27684:27: note: Calling function '_glewStrSame3', 1st argument '&pos' value is lifetime=pos
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"create_native_client_buffer", 27))
+                          ^
+custom_backend/glfw/glew/glew.c:289:38: note: The address of local variable 'pos' might be accessed at non-zero index.
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:289:38: warning: The address of local variable 'pos' might be accessed at non-zero index. [objectIndex]
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:27691:27: note: Address of variable taken here.
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"framebuffer_target", 18))
+                          ^
+custom_backend/glfw/glew/glew.c:27691:27: note: Calling function '_glewStrSame3', 1st argument '&pos' value is lifetime=pos
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"framebuffer_target", 18))
+                          ^
+custom_backend/glfw/glew/glew.c:289:38: note: The address of local variable 'pos' might be accessed at non-zero index.
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:289:38: warning: The address of local variable 'pos' might be accessed at non-zero index. [objectIndex]
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:27698:27: note: Address of variable taken here.
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"front_buffer_auto_refresh", 25))
+                          ^
+custom_backend/glfw/glew/glew.c:27698:27: note: Calling function '_glewStrSame3', 1st argument '&pos' value is lifetime=pos
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"front_buffer_auto_refresh", 25))
+                          ^
+custom_backend/glfw/glew/glew.c:289:38: note: The address of local variable 'pos' might be accessed at non-zero index.
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:289:38: warning: The address of local variable 'pos' might be accessed at non-zero index. [objectIndex]
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:27705:27: note: Address of variable taken here.
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"image_native_buffer", 19))
+                          ^
+custom_backend/glfw/glew/glew.c:27705:27: note: Calling function '_glewStrSame3', 1st argument '&pos' value is lifetime=pos
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"image_native_buffer", 19))
+                          ^
+custom_backend/glfw/glew/glew.c:289:38: note: The address of local variable 'pos' might be accessed at non-zero index.
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:289:38: warning: The address of local variable 'pos' might be accessed at non-zero index. [objectIndex]
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:27712:27: note: Address of variable taken here.
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"native_fence_sync", 17))
+                          ^
+custom_backend/glfw/glew/glew.c:27712:27: note: Calling function '_glewStrSame3', 1st argument '&pos' value is lifetime=pos
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"native_fence_sync", 17))
+                          ^
+custom_backend/glfw/glew/glew.c:289:38: note: The address of local variable 'pos' might be accessed at non-zero index.
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:289:38: warning: The address of local variable 'pos' might be accessed at non-zero index. [objectIndex]
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:27719:27: note: Address of variable taken here.
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"presentation_time", 17))
+                          ^
+custom_backend/glfw/glew/glew.c:27719:27: note: Calling function '_glewStrSame3', 1st argument '&pos' value is lifetime=pos
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"presentation_time", 17))
+                          ^
+custom_backend/glfw/glew/glew.c:289:38: note: The address of local variable 'pos' might be accessed at non-zero index.
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:289:38: warning: The address of local variable 'pos' might be accessed at non-zero index. [objectIndex]
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:27726:27: note: Address of variable taken here.
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"recordable", 10))
+                          ^
+custom_backend/glfw/glew/glew.c:27726:27: note: Calling function '_glewStrSame3', 1st argument '&pos' value is lifetime=pos
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"recordable", 10))
+                          ^
+custom_backend/glfw/glew/glew.c:289:38: note: The address of local variable 'pos' might be accessed at non-zero index.
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:289:38: warning: The address of local variable 'pos' might be accessed at non-zero index. [objectIndex]
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:27736:27: note: Address of variable taken here.
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"d3d_share_handle_client_buffer", 30))
+                          ^
+custom_backend/glfw/glew/glew.c:27736:27: note: Calling function '_glewStrSame3', 1st argument '&pos' value is lifetime=pos
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"d3d_share_handle_client_buffer", 30))
+                          ^
+custom_backend/glfw/glew/glew.c:289:38: note: The address of local variable 'pos' might be accessed at non-zero index.
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:289:38: warning: The address of local variable 'pos' might be accessed at non-zero index. [objectIndex]
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glew.c:27743:27: note: Address of variable taken here.
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"device_d3d", 10))
+                          ^
+custom_backend/glfw/glew/glew.c:27743:27: note: Calling function '_glewStrSame3', 1st argument '&pos' value is lifetime=pos
+        if (_glewStrSame3(&pos, &len, (const GLubyte*)"device_d3d", 10))
+                          ^
+custom_backend/glfw/glew/glew.c:289:38: note: The address of local variable 'pos' might be accessed at non-zero index.
+    if (i == nb && (*na == nb || (*a)[i] == ' ' || (*a)[i] == '\n' || (*a)[i] == '\r' || (*a)[i] == '\t'))
+                                     ^
+custom_backend/glfw/glew/glewinfo.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 1199 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+custom_backend/glfw/glew/glewinfo.c:16779:7: style: The scope of the variable 'attrib' can be reduced. [variableScope]
+  int attrib[] = { GLX_RGBA, GLX_DOUBLEBUFFER, None };
+      ^
+custom_backend/glfw/glew/glewinfo.c:16470:10: style: Unused variable: majorVersion [unusedVariable]
+  EGLint majorVersion, minorVersion;
+         ^
+custom_backend/glfw/glew/glewinfo.c:16470:24: style: Unused variable: minorVersion [unusedVariable]
+  EGLint majorVersion, minorVersion;
+                       ^
+custom_backend/glfw/glew/visualinfo.c:1287:10: style:inconclusive: Found duplicate branches for 'if' and 'else'. [duplicateBranch]
+    else if (!strcmp(argv[p], "-h"))
+         ^
+custom_backend/glfw/glew/visualinfo.c:1291:5: note: Found duplicate branches for 'if' and 'else'.
+    else
+    ^
+custom_backend/glfw/glew/visualinfo.c:1287:10: note: Found duplicate branches for 'if' and 'else'.
+    else if (!strcmp(argv[p], "-h"))
+         ^
+custom_backend/glfw/glew/visualinfo.c:653:14: style: The scope of the variable 'ret' can be reduced. [variableScope]
+  int value, ret, i;
+             ^
+custom_backend/glfw/glew/visualinfo.c:653:19: style: The scope of the variable 'i' can be reduced. [variableScope]
+  int value, ret, i;
+                  ^
+custom_backend/glfw/glew/visualinfo.c:398:12: style:inconclusive: Found duplicate branches for 'if' and 'else'. [duplicateBranch]
+      else if (value[4] == WGL_SWAP_UNDEFINED_ARB) fprintf(file, " . ");
+           ^
+custom_backend/glfw/glew/visualinfo.c:399:7: note: Found duplicate branches for 'if' and 'else'.
+      else fprintf(file, " . ");
+      ^
+custom_backend/glfw/glew/visualinfo.c:398:12: note: Found duplicate branches for 'if' and 'else'.
+      else if (value[4] == WGL_SWAP_UNDEFINED_ARB) fprintf(file, " . ");
+           ^
+custom_backend/glfw/glew/visualinfo.c:1270:10: style:inconclusive: Found duplicate branches for 'if' and 'else'. [duplicateBranch]
+    else if (!strcmp(argv[p], "-h"))
+         ^
+custom_backend/glfw/glew/visualinfo.c:1274:5: note: Found duplicate branches for 'if' and 'else'.
+    else
+    ^
+custom_backend/glfw/glew/visualinfo.c:1270:10: note: Found duplicate branches for 'if' and 'else'.
+    else if (!strcmp(argv[p], "-h"))
+         ^
+custom_backend/cwobj/cwobj.h:105:36: error: Array 'str2[2]' accessed at index 5, which is out of bounds. [arrayIndexOutOfBounds]
+        if ((str1[k] | 32) != (str2[k] | 32))
+                                   ^
+custom_backend/cwobj/cwobj.h:384:29: warning: Either the condition 'hash_table->lg_table_size<26' is redundant or the array 'primes[27]' is accessed at index 30, which is out of bounds. [arrayIndexOutOfBoundsCond]
+        hash = hash % primes[hash_table->lg_table_size+5];
+                            ^
+custom_backend/cwobj/cwobj.h:383:35: note: Assuming that condition 'hash_table->lg_table_size<26' is not redundant
+    if (hash_table->lg_table_size < 26) {
+                                  ^
+custom_backend/cwobj/cwobj.h:384:29: note: Array index out of bounds
+        hash = hash % primes[hash_table->lg_table_size+5];
+                            ^
+custom_backend/cwobj/cwobj.h:565:9: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+        fprintf(stdout, "key[%i] = %s\n", i, hash_table->keys[i]);
+        ^
+custom_backend/cwobj/cwobj.h:1189:13: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+            fprintf(stdout, "Indice %i:\nVertice:%f %f %f\n"
+            ^
+custom_backend/cwobj/cwobj.h:1465:9: error: Resource leak: f [resourceLeak]
+        return NULL;
+        ^
+custom_backend/cwobj/cwobj.h:1641:9: error: Resource leak: f [resourceLeak]
+        return NULL;
+        ^
+custom_backend/cwobj/cwobj.h:1445:21: style: Checking if unsigned expression 'data_length' is less than zero. [unsignedLessThanZero]
+    if (data_length <= 0) return NULL;
+                    ^
+custom_backend/cwobj/cwobj.h:894:20: style: Variable 'i' is assigned a value that is never used. [unreadVariable]
+    unsigned int i = 0, data_length = 0;
+                   ^
+custom_backend/cwobj/cwobj.h:894:37: style: Variable 'data_length' is assigned a value that is never used. [unreadVariable]
+    unsigned int i = 0, data_length = 0;
+                                    ^
+custom_backend/cwobj/cwobj.h:1508:9: warning: %lu in format string (no. 2) requires 'unsigned long' but the argument type is 'signed long'. [invalidPrintfArgType_uint]
+        fprintf(stdout, "cwobj_objLoadMtlib: '%s' L%lu parsing tag '%s' with value '%s'\n", filename, curr_line, tag, data);
+        ^
+custom_backend/cwobj/cwobj.h:1710:9: warning: %lu in format string (no. 2) requires 'unsigned long' but the argument type is 'signed long'. [invalidPrintfArgType_uint]
+        fprintf(stdout, "cwobj_load: '%s' L%lu parsing tag '%s' with value '%s'\n", filename, curr_line, tag, data);
+        ^
+custom_backend/opengl_es2/fbg_opengl_es2.c:392:19: style: Variable 'attrib_id' is assigned a value that is never used. [unreadVariable]
+    int attrib_id = 1;
+                  ^
+custom_backend/opengl_es2/fbg_opengl_es2.c:400:19: style: Variable 'attrib_id' is assigned a value that is never used. [unreadVariable]
+        attrib_id += 1;
+                  ^
+custom_backend/opengl_es2/fbg_opengl_es2.c:409:19: style: Variable 'attrib_id' is assigned a value that is never used. [unreadVariable]
+        attrib_id += 1;
+                  ^
+custom_backend/opengl_es2/fbg_opengl_es2.c:167:21: style: Variable 'success' is assigned a value that is never used. [unreadVariable]
+    int32_t success = graphics_get_display_size(0 /* LCD */, &screen_width, &screen_height);
+                    ^
+custom_backend/opengl_es2_parallel.c:117:39: error: syntax error [syntaxError]
+    struct _fbg *fbg = fbg_gles2Setup("/dev/fb0"3, );
+                                      ^
+examples/earth.c:50:19: style: Variable 'rect_size' is assigned a value that is never used. [unreadVariable]
+    int rect_size = 1;
+                  ^
+examples/full_example.c:69:15: style: Redundant initialization for 'r'. The initialized value is overwritten before it is read. [redundantInitialization]
+            r = texture->data[xtl] * (1. - p);
+              ^
+examples/full_example.c:59:19: note: r is initialized
+            int r = p*255;
+                  ^
+examples/full_example.c:69:15: note: r is overwritten
+            r = texture->data[xtl] * (1. - p);
+              ^
+examples/full_example.c:70:15: style: Redundant initialization for 'g'. The initialized value is overwritten before it is read. [redundantInitialization]
+            g = texture->data[xtl + 1] * (1. - p);
+              ^
+examples/full_example.c:60:19: note: g is initialized
+            int g = p*255;
+                  ^
+examples/full_example.c:70:15: note: g is overwritten
+            g = texture->data[xtl + 1] * (1. - p);
+              ^
+examples/full_example.c:71:15: style: Redundant initialization for 'b'. The initialized value is overwritten before it is read. [redundantInitialization]
+            b = texture->data[xtl + 2] * (1. - p);
+              ^
+examples/full_example.c:61:19: note: b is initialized
+            int b = p*255;
+                  ^
+examples/full_example.c:71:15: note: b is overwritten
+            b = texture->data[xtl + 2] * (1. - p);
+              ^
+examples/full_example.c:59:17: style:inconclusive: Same expression used in consecutive assignments of 'r' and 'g'. [duplicateAssignExpression]
+            int r = p*255;
+                ^
+examples/full_example.c:60:17: note: Same expression used in consecutive assignments of 'r' and 'g'.
+            int g = p*255;
+                ^
+examples/full_example.c:59:17: note: Same expression used in consecutive assignments of 'r' and 'g'.
+            int r = p*255;
+                ^
+examples/full_example.c:60:17: style:inconclusive: Same expression used in consecutive assignments of 'g' and 'b'. [duplicateAssignExpression]
+            int g = p*255;
+                ^
+examples/full_example.c:61:17: note: Same expression used in consecutive assignments of 'g' and 'b'.
+            int b = p*255;
+                ^
+examples/full_example.c:60:17: note: Same expression used in consecutive assignments of 'g' and 'b'.
+            int g = p*255;
+                ^
+examples/simple_parallel_example.c:40:11: style: Variable 'x' is assigned a value that is never used. [unreadVariable]
+    int x = 0, y = 0;
+          ^
+src/fbgraphics.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 25 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/stb/stb_image.h:5510:17: style: Redundant condition: If 'req_comp >= 3', the comparison 'req_comp' is always true. [redundantCondition]
+   if (req_comp && req_comp >= 3) // we can directly decode 3 or 4
+                ^
+src/fbgraphics.c:1067:15: style: Condition '(2*vH)<1' is always false [knownConditionTrueFalse]
+ if ((2 * vH) < 1)
+              ^
+src/fbgraphics.c:1064:15: note: Assuming that condition '(6*vH)<1' is not redundant
+ if ((6 * vH) < 1)
+              ^
+src/fbgraphics.c:1067:15: note: Condition '(2*vH)<1' is always false
+ if ((2 * vH) < 1)
+              ^
+src/fbgraphics.c:1512:13: style: Condition 'img==NULL' is always true [knownConditionTrueFalse]
+    if (img == NULL) {
+            ^
+src/fbgraphics.c:1506:28: note: Assignment 'img=NULL', assigned value is 0
+    struct _fbg_img *img = NULL;
+                           ^
+src/fbgraphics.c:1512:13: note: Condition 'img==NULL' is always true
+    if (img == NULL) {
+            ^
+src/fbgraphics.c:1259:9: warning: %i in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+        fprintf(stderr, "fbg_createImage (%ix%i): calloc failed!\n", width, height);
+        ^
+src/fbgraphics.c:1259:9: warning: %i in format string (no. 2) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+        fprintf(stderr, "fbg_createImage (%ix%i): calloc failed!\n", width, height);
+        ^
+src/fbgraphics.c:1128:5: warning: Either the condition '!fnt' is redundant or there is possible null pointer dereference: fnt. [nullPointerRedundantCheck]
+    fnt->glyph_coord_x = calloc(1, glyph_count * sizeof(int));
+    ^
+src/fbgraphics.c:1122:9: note: Assuming that condition '!fnt' is not redundant
+    if (!fnt) {
+        ^
+src/fbgraphics.c:1128:5: note: Null pointer dereference
+    fnt->glyph_coord_x = calloc(1, glyph_count * sizeof(int));
+    ^
+src/fbgraphics.c:1129:10: warning: Either the condition '!fnt' is redundant or there is possible null pointer dereference: fnt. [nullPointerRedundantCheck]
+    if (!fnt->glyph_coord_x) {
+         ^
+src/fbgraphics.c:1122:9: note: Assuming that condition '!fnt' is not redundant
+    if (!fnt) {
+        ^
+src/fbgraphics.c:1129:10: note: Null pointer dereference
+    if (!fnt->glyph_coord_x) {
+         ^
+src/fbgraphics.c:1257:5: warning: Either the condition '!img' is redundant or there is possible null pointer dereference: img. [nullPointerRedundantCheck]
+    img->data = calloc(1, (width * height * fbg->components) * sizeof(char));
+    ^
+src/fbgraphics.c:1253:9: note: Assuming that condition '!img' is not redundant
+    if (!img) {
+        ^
+src/fbgraphics.c:1257:5: note: Null pointer dereference
+    img->data = calloc(1, (width * height * fbg->components) * sizeof(char));
+    ^
+src/fbgraphics.c:1258:10: warning: Either the condition '!img' is redundant or there is possible null pointer dereference: img. [nullPointerRedundantCheck]
+    if (!img->data) {
+         ^
+src/fbgraphics.c:1253:9: note: Assuming that condition '!img' is not redundant
+    if (!img) {
+        ^
+src/fbgraphics.c:1258:10: note: Null pointer dereference
+    if (!img->data) {
+         ^
+src/stb/stb_image.h:7036:6: style: Redundant initialization for 'c'. The initialized value is overwritten before it is read. [redundantInitialization]
+   c = (char) stbi__get8(z);
+     ^
+src/stb/stb_image.h:7034:11: note: c is initialized
+   char c = '\0';
+          ^
+src/stb/stb_image.h:7036:6: note: c is overwritten
+   c = (char) stbi__get8(z);
+     ^
+src/stb/stb_image.h:1167:11: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   return stbi__errpuc("unknown image type", "Image not of any known type, or corrupt");
+          ^
+src/stb/stb_image.h:1177:32: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (reduced == NULL) return stbi__errpuc("outofmem", "Out of memory");
+                               ^
+src/stb/stb_image.h:1193:50: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (enlarged == NULL) return (stbi__uint16 *) stbi__errpuc("outofmem", "Out of memory");
+                                                 ^
+src/stb/stb_image.h:1350:19: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!f) return stbi__errpuc("can't fopen", "Unable to open file");
+                  ^
+src/stb/stb_image.h:1386:31: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!f) return (stbi_us *) stbi__errpuc("can't fopen", "Unable to open file");
+                              ^
+src/stb/stb_image.h:1455:11: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   return stbi__errpf("unknown image type", "Image not of any known type, or corrupt");
+          ^
+src/stb/stb_image.h:1477:19: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!f) return stbi__errpf("can't fopen", "Unable to open file");
+                  ^
+src/stb/stb_image.h:1746:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("outofmem", "Out of memory");
+             ^
+src/stb/stb_image.h:1770:76: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         default: STBI_ASSERT(0); STBI_FREE(data); STBI_FREE(good); return stbi__errpuc("unsupported", "Unsupported format conversion");
+                                                                           ^
+src/stb/stb_image.h:1803:31: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return (stbi__uint16 *) stbi__errpuc("outofmem", "Out of memory");
+                              ^
+src/stb/stb_image.h:1827:92: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         default: STBI_ASSERT(0); STBI_FREE(data); STBI_FREE(good); return (stbi__uint16*) stbi__errpuc("unsupported", "Unsupported format conversion");
+                                                                                           ^
+src/stb/stb_image.h:1844:50: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (output == NULL) { STBI_FREE(data); return stbi__errpf("outofmem", "Out of memory"); }
+                                                 ^
+src/stb/stb_image.h:1870:50: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (output == NULL) { STBI_FREE(data); return stbi__errpuc("outofmem", "Out of memory"); }
+                                                 ^
+src/stb/stb_image.h:3817:45: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (req_comp < 0 || req_comp > 4) return stbi__errpuc("bad req_comp", "Internal error");
+                                            ^
+src/stb/stb_image.h:3851:71: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         if (!z->img_comp[k].linebuf) { stbi__cleanup_jpeg(z); return stbi__errpuc("outofmem", "Out of memory"); }
+                                                                      ^
+src/stb/stb_image.h:3869:52: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      if (!output) { stbi__cleanup_jpeg(z); return stbi__errpuc("outofmem", "Out of memory"); }
+                                                   ^
+src/stb/stb_image.h:3978:19: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!j) return stbi__errpuc("outofmem", "Out of memory");
+                  ^
+src/stb/stb_image.h:5202:45: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (req_comp < 0 || req_comp > 4) return stbi__errpuc("bad req_comp", "Internal error");
+                                            ^
+src/stb/stb_image.h:5209:17: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         return stbi__errpuc("bad bits_per_channel", "PNG not supported: unsupported color depth");
+                ^
+src/stb/stb_image.h:5387:61: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (stbi__get8(s) != 'B' || stbi__get8(s) != 'M') return stbi__errpuc("not BMP", "Corrupt BMP");
+                                                            ^
+src/stb/stb_image.h:5396:33: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (info->offset < 0) return stbi__errpuc("bad BMP", "bad BMP");
+                                ^
+src/stb/stb_image.h:5398:80: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (hsz != 12 && hsz != 40 && hsz != 56 && hsz != 108 && hsz != 124) return stbi__errpuc("unknown BMP", "BMP type not supported: unknown");
+                                                                               ^
+src/stb/stb_image.h:5406:38: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (stbi__get16le(s) != 1) return stbi__errpuc("bad BMP", "bad BMP");
+                                     ^
+src/stb/stb_image.h:5410:50: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      if (compress == 1 || compress == 2) return stbi__errpuc("BMP RLE", "BMP type not supported: RLE");
+                                                 ^
+src/stb/stb_image.h:5411:33: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      if (compress >= 4) return stbi__errpuc("BMP JPEG/PNG", "BMP type not supported: unsupported compression"); // this includes PNG/JPEG modes
+                                ^
+src/stb/stb_image.h:5412:71: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      if (compress == 3 && info->bpp != 16 && info->bpp != 32) return stbi__errpuc("bad BMP", "bad BMP"); // bitfields requires 16 or 32 bits/pixel
+                                                                      ^
+src/stb/stb_image.h:5436:26: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+                  return stbi__errpuc("bad BMP", "bad BMP");
+                         ^
+src/stb/stb_image.h:5439:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpuc("bad BMP", "bad BMP");
+                      ^
+src/stb/stb_image.h:5445:20: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+            return stbi__errpuc("bad BMP", "bad BMP");
+                   ^
+src/stb/stb_image.h:5484:47: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (s->img_y > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                              ^
+src/stb/stb_image.h:5485:47: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (s->img_x > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                              ^
+src/stb/stb_image.h:5502:16: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+        return stbi__errpuc("bad offset", "Corrupt BMP");
+               ^
+src/stb/stb_image.h:5517:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("too large", "Corrupt BMP");
+             ^
+src/stb/stb_image.h:5520:21: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!out) return stbi__errpuc("outofmem", "Out of memory");
+                    ^
+src/stb/stb_image.h:5523:63: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      if (psize == 0 || psize > 256) { STBI_FREE(out); return stbi__errpuc("invalid", "Corrupt BMP"); }
+                                                              ^
+src/stb/stb_image.h:5535:37: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      else { STBI_FREE(out); return stbi__errpuc("bad bpp", "Corrupt BMP"); }
+                                    ^
+src/stb/stb_image.h:5592:58: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         if (!mr || !mg || !mb) { STBI_FREE(out); return stbi__errpuc("bad masks", "Corrupt BMP"); }
+                                                         ^
+src/stb/stb_image.h:5598:93: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         if (rcount > 8 || gcount > 8 || bcount > 8 || acount > 8) { STBI_FREE(out); return stbi__errpuc("bad masks", "Corrupt BMP"); }
+                                                                                            ^
+src/stb/stb_image.h:5823:49: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (tga_height > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                                ^
+src/stb/stb_image.h:5824:48: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (tga_width > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                               ^
+src/stb/stb_image.h:5839:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("bad format", "Can't find out TGA pixelformat");
+             ^
+src/stb/stb_image.h:5847:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("too large", "Corrupt TGA");
+             ^
+src/stb/stb_image.h:5850:26: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!tga_data) return stbi__errpuc("outofmem", "Out of memory");
+                         ^
+src/stb/stb_image.h:5867:20: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+            return stbi__errpuc("bad palette", "Corrupt TGA");
+                   ^
+src/stb/stb_image.h:5876:20: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+            return stbi__errpuc("outofmem", "Out of memory");
+                   ^
+src/stb/stb_image.h:5888:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpuc("bad palette", "Corrupt TGA");
+                      ^
+src/stb/stb_image.h:6060:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("not PSD", "Corrupt PSD image");
+             ^
+src/stb/stb_image.h:6064:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("wrong version", "Unsupported version of PSD image");
+             ^
+src/stb/stb_image.h:6072:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("wrong channel count", "Unsupported number of channels in PSD image");
+             ^
+src/stb/stb_image.h:6078:40: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (h > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                       ^
+src/stb/stb_image.h:6079:40: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (w > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                       ^
+src/stb/stb_image.h:6084:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("unsupported bit depth", "PSD bit depth is not 8 or 16 bit");
+             ^
+src/stb/stb_image.h:6097:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("wrong color format", "PSD is not in RGB color format");
+             ^
+src/stb/stb_image.h:6114:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("bad compression", "PSD has an unknown compression format");
+             ^
+src/stb/stb_image.h:6118:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("too large", "Corrupt PSD");
+             ^
+src/stb/stb_image.h:6128:21: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!out) return stbi__errpuc("outofmem", "Out of memory");
+                    ^
+src/stb/stb_image.h:6161:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpuc("corrupt", "bad RLE data");
+                      ^
+src/stb/stb_image.h:6295:38: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         if (stbi__at_eof(s)) return stbi__errpuc("bad file","PIC file too short");
+                                     ^
+src/stb/stb_image.h:6323:17: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         return stbi__errpuc("bad format","too many packets");
+                ^
+src/stb/stb_image.h:6334:44: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      if (stbi__at_eof(s))          return stbi__errpuc("bad file","file too short (reading packets)");
+                                           ^
+src/stb/stb_image.h:6335:38: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      if (packet->size != 8)  return stbi__errpuc("bad format","packet isn't 8bpp");
+                                     ^
+src/stb/stb_image.h:6349:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpuc("bad format","packet has bad compression type");
+                      ^
+src/stb/stb_image.h:6368:52: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+                     if (stbi__at_eof(s))   return stbi__errpuc("bad file","file too short (pure read count)");
+                                                   ^
+src/stb/stb_image.h:6386:48: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+                  if (stbi__at_eof(s))  return stbi__errpuc("bad file","file too short (mixed read count)");
+                                               ^
+src/stb/stb_image.h:6396:32: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+                        return stbi__errpuc("bad file","scanline overrun");
+                               ^
+src/stb/stb_image.h:6405:45: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+                     if (count>left) return stbi__errpuc("bad file","scanline overrun");
+                                            ^
+src/stb/stb_image.h:6436:40: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (y > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                       ^
+src/stb/stb_image.h:6437:40: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (x > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                       ^
+src/stb/stb_image.h:6439:33: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (stbi__at_eof(s))  return stbi__errpuc("bad file","file too short (pic header)");
+                                ^
+src/stb/stb_image.h:6440:51: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!stbi__mad3sizes_valid(x, y, 4, 0)) return stbi__errpuc("too large", "PIC image too large to decode");
+                                                  ^
+src/stb/stb_image.h:6448:24: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!result) return stbi__errpuc("outofmem", "Out of memory");
+                       ^
+src/stb/stb_image.h:6668:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpuc("no clear code", "Corrupt GIF");
+                      ^
+src/stb/stb_image.h:6674:26: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+                  return stbi__errpuc("too many codes", "Corrupt GIF");
+                         ^
+src/stb/stb_image.h:6681:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpuc("illegal code in raster", "Corrupt GIF");
+                      ^
+src/stb/stb_image.h:6692:20: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+            return stbi__errpuc("illegal code in raster", "Corrupt GIF");
+                   ^
+src/stb/stb_image.h:6713:17: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         return stbi__errpuc("too large", "GIF image is too large");
+                ^
+src/stb/stb_image.h:6719:17: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         return stbi__errpuc("outofmem", "Out of memory");
+                ^
+src/stb/stb_image.h:6777:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpuc("bad Image Descriptor", "Corrupt GIF");
+                      ^
+src/stb/stb_image.h:6810:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpuc("missing color table", "Corrupt GIF");
+                      ^
+src/stb/stb_image.h:6869:20: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+            return stbi__errpuc("unknown code", "Corrupt GIF");
+                   ^
+src/stb/stb_image.h:6882:11: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   return stbi__errpuc("outofmem", "Out of memory");
+          ^
+src/stb/stb_image.h:6966:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("not GIF", "Image was not as a gif type.");
+             ^
+src/stb/stb_image.h:7097:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpf("not HDR", "Corrupt HDR image");
+             ^
+src/stb/stb_image.h:7106:26: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!valid)    return stbi__errpf("unsupported format", "Unsupported HDR format");
+                         ^
+src/stb/stb_image.h:7111:42: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (strncmp(token, "-Y ", 3))  return stbi__errpf("unsupported data layout", "Unsupported HDR format");
+                                         ^
+src/stb/stb_image.h:7115:42: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (strncmp(token, "+X ", 3))  return stbi__errpf("unsupported data layout", "Unsupported HDR format");
+                                         ^
+src/stb/stb_image.h:7119:45: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (height > STBI_MAX_DIMENSIONS) return stbi__errpf("too large","Very large image (corrupt?)");
+                                            ^
+src/stb/stb_image.h:7120:44: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (width > STBI_MAX_DIMENSIONS) return stbi__errpf("too large","Very large image (corrupt?)");
+                                           ^
+src/stb/stb_image.h:7129:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpf("too large", "HDR image is too large");
+             ^
+src/stb/stb_image.h:7134:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpf("outofmem", "Out of memory");
+             ^
+src/stb/stb_image.h:7172:79: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+         if (len != width) { STBI_FREE(hdr_data); STBI_FREE(scanline); return stbi__errpf("invalid decoded scanline length", "corrupt HDR"); }
+                                                                              ^
+src/stb/stb_image.h:7177:23: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+               return stbi__errpf("outofmem", "Out of memory");
+                      ^
+src/stb/stb_image.h:7190:89: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+                  if (count > nleft) { STBI_FREE(hdr_data); STBI_FREE(scanline); return stbi__errpf("corrupt", "bad RLE data in HDR"); }
+                                                                                        ^
+src/stb/stb_image.h:7195:89: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+                  if (count > nleft) { STBI_FREE(hdr_data); STBI_FREE(scanline); return stbi__errpf("corrupt", "bad RLE data in HDR"); }
+                                                                                        ^
+src/stb/stb_image.h:7437:47: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (s->img_y > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                              ^
+src/stb/stb_image.h:7438:47: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (s->img_x > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
+                                              ^
+src/stb/stb_image.h:7445:14: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+      return stbi__errpuc("too large", "PNM too large");
+             ^
+src/stb/stb_image.h:7448:21: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+   if (!out) return stbi__errpuc("outofmem", "Out of memory");
+                    ^
+src/stb/stb_image.h:2236:8: style: The scope of the variable 'diff' can be reduced. [variableScope]
+   int diff,dc;
+       ^
+src/stb/stb_image.h:2236:13: style: The scope of the variable 'dc' can be reduced. [variableScope]
+   int diff,dc;
+            ^
+src/stb/stb_image.h:2237:8: style: The scope of the variable 't' can be reduced. [variableScope]
+   int t;
+       ^
+src/stb/stb_image.h:3232:15: style: The scope of the variable 'q' can be reduced. [variableScope]
+   int Lf,p,i,q, h_max=1,v_max=1,c;
+              ^
+src/stb/stb_image.h:3454:10: style: The scope of the variable 't0' can be reduced. [variableScope]
+   int i,t0,t1;
+         ^
+src/stb/stb_image.h:4187:10: style: The scope of the variable 's' can be reduced. [variableScope]
+   int b,s;
+         ^
+src/stb/stb_image.h:4406:15: style: The scope of the variable 'type' can be reduced. [variableScope]
+   int final, type;
+              ^
+src/stb/stb_image.h:4823:11: style: The scope of the variable 'i' can be reduced. [variableScope]
+      int i,j,x,y;
+          ^
+src/stb/stb_image.h:4823:13: style: The scope of the variable 'j' can be reduced. [variableScope]
+      int i,j,x,y;
+            ^
+src/stb/stb_image.h:5680:9: style: The scope of the variable 'sz' can be reduced. [variableScope]
+    int sz, tga_colormap_type;
+        ^
+src/stb/stb_image.h:5814:11: style: The scope of the variable 'j' can be reduced. [variableScope]
+   int i, j;
+          ^
+src/stb/stb_image.h:5816:8: style: The scope of the variable 'RLE_count' can be reduced. [variableScope]
+   int RLE_count = 0;
+       ^
+src/stb/stb_image.h:5817:8: style: The scope of the variable 'RLE_repeating' can be reduced. [variableScope]
+   int RLE_repeating = 0;
+       ^
+src/stb/stb_image.h:5818:8: style: The scope of the variable 'read_next_pixel' can be reduced. [variableScope]
+   int read_next_pixel = 1;
+       ^
+src/stb/stb_image.h:6012:22: style: The scope of the variable 'len' can be reduced. [variableScope]
+   int count, nleft, len;
+                     ^
+src/stb/stb_image.h:6702:8: style: The scope of the variable 'dispose' can be reduced. [variableScope]
+   int dispose;
+       ^
+src/fbgraphics.c:1597:13: style: The scope of the variable 'py' can be reduced. [variableScope]
+    int px, py;
+            ^
+src/stb/stb_image.h:5346:6: error: Shifting by a negative value is undefined behaviour [shiftNegative]
+   v >>= (8-bits);
+     ^
+src/stb/stb_image.h:1346:71: style:inconclusive: Function 'stbi_load' argument 4 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF stbi_uc *stbi_load(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                      ^
+src/stb/stb_image.h:424:83: note: Function 'stbi_load' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_uc *stbi_load            (char const *filename, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                  ^
+src/stb/stb_image.h:1346:71: note: Function 'stbi_load' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_uc *stbi_load(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                      ^
+src/stb/stb_image.h:1346:81: style:inconclusive: Function 'stbi_load' argument 5 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF stbi_uc *stbi_load(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                                ^
+src/stb/stb_image.h:424:105: note: Function 'stbi_load' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_uc *stbi_load            (char const *filename, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                        ^
+src/stb/stb_image.h:1346:81: note: Function 'stbi_load' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_uc *stbi_load(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                                ^
+src/stb/stb_image.h:1356:68: style:inconclusive: Function 'stbi_load_from_file' argument 4 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF stbi_uc *stbi_load_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                   ^
+src/stb/stb_image.h:425:70: note: Function 'stbi_load_from_file' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_uc *stbi_load_from_file  (FILE *f, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                     ^
+src/stb/stb_image.h:1356:68: note: Function 'stbi_load_from_file' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_uc *stbi_load_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                   ^
+src/stb/stb_image.h:1356:78: style:inconclusive: Function 'stbi_load_from_file' argument 5 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF stbi_uc *stbi_load_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                             ^
+src/stb/stb_image.h:425:92: note: Function 'stbi_load_from_file' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_uc *stbi_load_from_file  (FILE *f, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                           ^
+src/stb/stb_image.h:1356:78: note: Function 'stbi_load_from_file' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_uc *stbi_load_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                             ^
+src/stb/stb_image.h:1369:76: style:inconclusive: Function 'stbi_load_from_file_16' argument 4 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF stbi__uint16 *stbi_load_from_file_16(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                           ^
+src/stb/stb_image.h:447:71: note: Function 'stbi_load_from_file_16' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_us *stbi_load_from_file_16(FILE *f, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                      ^
+src/stb/stb_image.h:1369:76: note: Function 'stbi_load_from_file_16' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi__uint16 *stbi_load_from_file_16(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                           ^
+src/stb/stb_image.h:1369:86: style:inconclusive: Function 'stbi_load_from_file_16' argument 5 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF stbi__uint16 *stbi_load_from_file_16(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                                     ^
+src/stb/stb_image.h:447:93: note: Function 'stbi_load_from_file_16' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_us *stbi_load_from_file_16(FILE *f, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                            ^
+src/stb/stb_image.h:1369:86: note: Function 'stbi_load_from_file_16' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi__uint16 *stbi_load_from_file_16(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                                     ^
+src/stb/stb_image.h:1382:74: style:inconclusive: Function 'stbi_load_16' argument 4 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF stbi_us *stbi_load_16(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                         ^
+src/stb/stb_image.h:446:84: note: Function 'stbi_load_16' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_us *stbi_load_16          (char const *filename, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                   ^
+src/stb/stb_image.h:1382:74: note: Function 'stbi_load_16' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_us *stbi_load_16(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                         ^
+src/stb/stb_image.h:1382:84: style:inconclusive: Function 'stbi_load_16' argument 5 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF stbi_us *stbi_load_16(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                                   ^
+src/stb/stb_image.h:446:106: note: Function 'stbi_load_16' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_us *stbi_load_16          (char const *filename, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                         ^
+src/stb/stb_image.h:1382:84: note: Function 'stbi_load_16' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_us *stbi_load_16(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                                   ^
+src/stb/stb_image.h:1409:93: style:inconclusive: Function 'stbi_load_from_memory' argument 5 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF stbi_uc *stbi_load_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp)
+                                                                                            ^
+src/stb/stb_image.h:420:109: note: Function 'stbi_load_from_memory' argument 5 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_uc *stbi_load_from_memory   (stbi_uc           const *buffer, int len   , int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                            ^
+src/stb/stb_image.h:1409:93: note: Function 'stbi_load_from_memory' argument 5 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_uc *stbi_load_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp)
+                                                                                            ^
+src/stb/stb_image.h:1409:103: style:inconclusive: Function 'stbi_load_from_memory' argument 6 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF stbi_uc *stbi_load_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp)
+                                                                                                      ^
+src/stb/stb_image.h:420:131: note: Function 'stbi_load_from_memory' argument 6 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_uc *stbi_load_from_memory   (stbi_uc           const *buffer, int len   , int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                                                  ^
+src/stb/stb_image.h:1409:103: note: Function 'stbi_load_from_memory' argument 6 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_uc *stbi_load_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp)
+                                                                                                      ^
+src/stb/stb_image.h:1416:107: style:inconclusive: Function 'stbi_load_from_callbacks' argument 5 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF stbi_uc *stbi_load_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp)
+                                                                                                          ^
+src/stb/stb_image.h:421:109: note: Function 'stbi_load_from_callbacks' argument 5 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_uc *stbi_load_from_callbacks(stbi_io_callbacks const *clbk  , void *user, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                            ^
+src/stb/stb_image.h:1416:107: note: Function 'stbi_load_from_callbacks' argument 5 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF stbi_uc *stbi_load_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp)
+                                                                                                          ^
+src/stb/stb_image.h:1416:117: style:inconclusive: Function 'stbi_load_from_callbacks' argument 6 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF stbi_uc *stbi_load_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp)
+                                                                                                                    ^
+src/stb/stb_image.h:421:131: note: Function 'stbi_load_from_callbacks' argument 6 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_uc *stbi_load_from_callbacks(stbi_io_callbacks const *clbk  , void *user, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                                                  ^
+src/stb/stb_image.h:1416:117: note: Function 'stbi_load_from_callbacks' argument 6 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF stbi_uc *stbi_load_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp)
+                                                                                                                    ^
+src/stb/stb_image.h:1458:92: style:inconclusive: Function 'stbi_loadf_from_memory' argument 5 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF float *stbi_loadf_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp)
+                                                                                           ^
+src/stb/stb_image.h:455:100: note: Function 'stbi_loadf_from_memory' argument 5 names different: declaration 'channels_in_file' definition 'comp'.
+   STBIDEF float *stbi_loadf_from_memory     (stbi_uc const *buffer, int len, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                   ^
+src/stb/stb_image.h:1458:92: note: Function 'stbi_loadf_from_memory' argument 5 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF float *stbi_loadf_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp)
+                                                                                           ^
+src/stb/stb_image.h:1458:102: style:inconclusive: Function 'stbi_loadf_from_memory' argument 6 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF float *stbi_loadf_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp)
+                                                                                                     ^
+src/stb/stb_image.h:455:122: note: Function 'stbi_loadf_from_memory' argument 6 names different: declaration 'desired_channels' definition 'req_comp'.
+   STBIDEF float *stbi_loadf_from_memory     (stbi_uc const *buffer, int len, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                                         ^
+src/stb/stb_image.h:1458:102: note: Function 'stbi_loadf_from_memory' argument 6 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF float *stbi_loadf_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp, int req_comp)
+                                                                                                     ^
+src/stb/stb_image.h:1465:106: style:inconclusive: Function 'stbi_loadf_from_callbacks' argument 5 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF float *stbi_loadf_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp)
+                                                                                                         ^
+src/stb/stb_image.h:456:112: note: Function 'stbi_loadf_from_callbacks' argument 5 names different: declaration 'channels_in_file' definition 'comp'.
+   STBIDEF float *stbi_loadf_from_callbacks  (stbi_io_callbacks const *clbk, void *user, int *x, int *y,  int *channels_in_file, int desired_channels);
+                                                                                                               ^
+src/stb/stb_image.h:1465:106: note: Function 'stbi_loadf_from_callbacks' argument 5 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF float *stbi_loadf_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp)
+                                                                                                         ^
+src/stb/stb_image.h:1465:116: style:inconclusive: Function 'stbi_loadf_from_callbacks' argument 6 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF float *stbi_loadf_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp)
+                                                                                                                   ^
+src/stb/stb_image.h:456:134: note: Function 'stbi_loadf_from_callbacks' argument 6 names different: declaration 'desired_channels' definition 'req_comp'.
+   STBIDEF float *stbi_loadf_from_callbacks  (stbi_io_callbacks const *clbk, void *user, int *x, int *y,  int *channels_in_file, int desired_channels);
+                                                                                                                                     ^
+src/stb/stb_image.h:1465:116: note: Function 'stbi_loadf_from_callbacks' argument 6 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF float *stbi_loadf_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp, int req_comp)
+                                                                                                                   ^
+src/stb/stb_image.h:1473:70: style:inconclusive: Function 'stbi_loadf' argument 4 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF float *stbi_loadf(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                     ^
+src/stb/stb_image.h:459:85: note: Function 'stbi_loadf' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+   STBIDEF float *stbi_loadf            (char const *filename, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                    ^
+src/stb/stb_image.h:1473:70: note: Function 'stbi_loadf' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF float *stbi_loadf(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                     ^
+src/stb/stb_image.h:1473:80: style:inconclusive: Function 'stbi_loadf' argument 5 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF float *stbi_loadf(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                               ^
+src/stb/stb_image.h:459:107: note: Function 'stbi_loadf' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+   STBIDEF float *stbi_loadf            (char const *filename, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                                          ^
+src/stb/stb_image.h:1473:80: note: Function 'stbi_loadf' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF float *stbi_loadf(char const *filename, int *x, int *y, int *comp, int req_comp)
+                                                                               ^
+src/stb/stb_image.h:1483:67: style:inconclusive: Function 'stbi_loadf_from_file' argument 4 names different: declaration 'channels_in_file' definition 'comp'. [funcArgNamesDifferent]
+STBIDEF float *stbi_loadf_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                  ^
+src/stb/stb_image.h:460:72: note: Function 'stbi_loadf_from_file' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+   STBIDEF float *stbi_loadf_from_file  (FILE *f, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                       ^
+src/stb/stb_image.h:1483:67: note: Function 'stbi_loadf_from_file' argument 4 names different: declaration 'channels_in_file' definition 'comp'.
+STBIDEF float *stbi_loadf_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                  ^
+src/stb/stb_image.h:1483:77: style:inconclusive: Function 'stbi_loadf_from_file' argument 5 names different: declaration 'desired_channels' definition 'req_comp'. [funcArgNamesDifferent]
+STBIDEF float *stbi_loadf_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                            ^
+src/stb/stb_image.h:460:94: note: Function 'stbi_loadf_from_file' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+   STBIDEF float *stbi_loadf_from_file  (FILE *f, int *x, int *y, int *channels_in_file, int desired_channels);
+                                                                                             ^
+src/stb/stb_image.h:1483:77: note: Function 'stbi_loadf_from_file' argument 5 names different: declaration 'desired_channels' definition 'req_comp'.
+STBIDEF float *stbi_loadf_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)
+                                                                            ^
+src/stb/stb_image.h:6422:51: style:inconclusive: Function 'stbi__pic_load' argument 2 names different: declaration 'x' definition 'px'. [funcArgNamesDifferent]
+static void *stbi__pic_load(stbi__context *s,int *px,int *py,int *comp,int req_comp, stbi__result_info *ri)
+                                                  ^
+src/stb/stb_image.h:945:55: note: Function 'stbi__pic_load' argument 2 names different: declaration 'x' definition 'px'.
+static void    *stbi__pic_load(stbi__context *s, int *x, int *y, int *comp, int req_comp, stbi__result_info *ri);
+                                                      ^
+src/stb/stb_image.h:6422:51: note: Function 'stbi__pic_load' argument 2 names different: declaration 'x' definition 'px'.
+static void *stbi__pic_load(stbi__context *s,int *px,int *py,int *comp,int req_comp, stbi__result_info *ri)
+                                                  ^
+src/stb/stb_image.h:6422:59: style:inconclusive: Function 'stbi__pic_load' argument 3 names different: declaration 'y' definition 'py'. [funcArgNamesDifferent]
+static void *stbi__pic_load(stbi__context *s,int *px,int *py,int *comp,int req_comp, stbi__result_info *ri)
+                                                          ^
+src/stb/stb_image.h:945:63: note: Function 'stbi__pic_load' argument 3 names different: declaration 'y' definition 'py'.
+static void    *stbi__pic_load(stbi__context *s, int *x, int *y, int *comp, int req_comp, stbi__result_info *ri);
+                                                              ^
+src/stb/stb_image.h:6422:59: note: Function 'stbi__pic_load' argument 3 names different: declaration 'y' definition 'py'.
+static void *stbi__pic_load(stbi__context *s,int *px,int *py,int *comp,int req_comp, stbi__result_info *ri)
+                                                          ^
+src/stb/stb_image.h:7650:63: style:inconclusive: Function 'stbi_info_from_callbacks' argument 1 names different: declaration 'clbk' definition 'c'. [funcArgNamesDifferent]
+STBIDEF int stbi_info_from_callbacks(stbi_io_callbacks const *c, void *user, int *x, int *y, int *comp)
+                                                              ^
+src/stb/stb_image.h:492:68: note: Function 'stbi_info_from_callbacks' argument 1 names different: declaration 'clbk' definition 'c'.
+STBIDEF int      stbi_info_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int *y, int *comp);
+                                                                   ^
+src/stb/stb_image.h:7650:63: note: Function 'stbi_info_from_callbacks' argument 1 names different: declaration 'clbk' definition 'c'.
+STBIDEF int stbi_info_from_callbacks(stbi_io_callbacks const *c, void *user, int *x, int *y, int *comp)
+                                                              ^
+src/stb/stb_image.h:7664:68: style:inconclusive: Function 'stbi_is_16_bit_from_callbacks' argument 1 names different: declaration 'clbk' definition 'c'. [funcArgNamesDifferent]
+STBIDEF int stbi_is_16_bit_from_callbacks(stbi_io_callbacks const *c, void *user)
+                                                                   ^
+src/stb/stb_image.h:494:73: note: Function 'stbi_is_16_bit_from_callbacks' argument 1 names different: declaration 'clbk' definition 'c'.
+STBIDEF int      stbi_is_16_bit_from_callbacks(stbi_io_callbacks const *clbk, void *user);
+                                                                        ^
+src/stb/stb_image.h:7664:68: note: Function 'stbi_is_16_bit_from_callbacks' argument 1 names different: declaration 'clbk' definition 'c'.
+STBIDEF int stbi_is_16_bit_from_callbacks(stbi_io_callbacks const *c, void *user)
+                                                                   ^
+src/fbgraphics.c:1005:48: style:inconclusive: Function 'fbg_clear' argument 2 names different: declaration 'brightness' definition 'color'. [funcArgNamesDifferent]
+void fbg_clear(struct _fbg *fbg, unsigned char color) {
+                                               ^
+src/fbgraphics.h:375:59: note: Function 'fbg_clear' argument 2 names different: declaration 'brightness' definition 'color'.
+    extern void fbg_clear(struct _fbg *fbg, unsigned char brightness);
+                                                          ^
+src/fbgraphics.c:1005:48: note: Function 'fbg_clear' argument 2 names different: declaration 'brightness' definition 'color'.
+void fbg_clear(struct _fbg *fbg, unsigned char color) {
+                                               ^
+src/fbgraphics.c:1172:55: style:inconclusive: Function 'fbg_textFont' argument 2 names different: declaration 'font' definition 'fnt'. [funcArgNamesDifferent]
+void fbg_textFont(struct _fbg *fbg, struct _fbg_font *fnt) {
+                                                      ^
+src/fbgraphics.h:743:66: note: Function 'fbg_textFont' argument 2 names different: declaration 'font' definition 'fnt'.
+    extern void fbg_textFont(struct _fbg *fbg, struct _fbg_font *font);
+                                                                 ^
+src/fbgraphics.c:1172:55: note: Function 'fbg_textFont' argument 2 names different: declaration 'font' definition 'fnt'.
+void fbg_textFont(struct _fbg *fbg, struct _fbg_font *fnt) {
+                                                      ^
+src/fbgraphics.c:1477:84: style:inconclusive: Function 'fbg_loadSTBImageFromMemory' argument 2 names different: declaration 'data' definition 'buffer'. [funcArgNamesDifferent]
+struct _fbg_img *fbg_loadSTBImageFromMemory(struct _fbg *fbg, const unsigned char *buffer, int size) {
+                                                                                   ^
+src/fbgraphics.h:645:95: note: Function 'fbg_loadSTBImageFromMemory' argument 2 names different: declaration 'data' definition 'buffer'.
+    extern struct _fbg_img *fbg_loadSTBImageFromMemory(struct _fbg *fbg, const unsigned char *data, int size);
+                                                                                              ^
+src/fbgraphics.c:1477:84: note: Function 'fbg_loadSTBImageFromMemory' argument 2 names different: declaration 'data' definition 'buffer'.
+struct _fbg_img *fbg_loadSTBImageFromMemory(struct _fbg *fbg, const unsigned char *buffer, int size) {
+                                                                                   ^
+src/fbgraphics.c:1645:23: style:inconclusive: Function 'fbg_randf' argument 1 names different: declaration 'min' definition 'a'. [funcArgNamesDifferent]
+float fbg_randf(float a, float b) {
+                      ^
+src/fbgraphics.h:829:34: note: Function 'fbg_randf' argument 1 names different: declaration 'min' definition 'a'.
+    extern float fbg_randf(float min, float max);
+                                 ^
+src/fbgraphics.c:1645:23: note: Function 'fbg_randf' argument 1 names different: declaration 'min' definition 'a'.
+float fbg_randf(float a, float b) {
+                      ^
+src/fbgraphics.c:1645:32: style:inconclusive: Function 'fbg_randf' argument 2 names different: declaration 'max' definition 'b'. [funcArgNamesDifferent]
+float fbg_randf(float a, float b) {
+                               ^
+src/fbgraphics.h:829:45: note: Function 'fbg_randf' argument 2 names different: declaration 'max' definition 'b'.
+    extern float fbg_randf(float min, float max);
+                                            ^
+src/fbgraphics.c:1645:32: note: Function 'fbg_randf' argument 2 names different: declaration 'max' definition 'b'.
+float fbg_randf(float a, float b) {
+                               ^
+src/fbgraphics.c:733:17: style: Variable 'pix_pointer' is assigned a value that is never used. [unreadVariable]
+    pix_pointer += fbg->comp_offset;
+                ^
+src/fbgraphics.c:744:17: style: Variable 'pix_pointer' is assigned a value that is never used. [unreadVariable]
+    pix_pointer += 1;
+                ^
+src/fbgraphics.c:745:17: style: Variable 'pix_pointer' is assigned a value that is never used. [unreadVariable]
+    pix_pointer += fbg->comp_offset;
+                ^
+src/fbgraphics.c:805:17: style: Variable 'pix_pointer' is assigned a value that is never used. [unreadVariable]
+    pix_pointer += fbg->comp_offset;
+                ^
+src/fbgraphics.c:853:12: style: Variable 'xx' is assigned a value that is never used. [unreadVariable]
+    int xx = 0, yy = 0, w3 = w * fbg->components;
+           ^
+src/fbgraphics.c:873:12: style: Variable 'xx' is assigned a value that is never used. [unreadVariable]
+    int xx = 0, yy = 0, w3 = w * fbg->components;
+           ^
+src/fbgraphics.c:1537:18: style: Variable 'j' is assigned a value that is never used. [unreadVariable]
+    int i = 0, j = 0;
+                 ^
+src/fbgraphics.c:951:36: style: Condition 'ringbuffer_read_status==1' is always true [knownConditionTrueFalse]
+        if (ringbuffer_read_status == 1) {
+                                   ^
+src/fbgraphics.c:944:113: note: Assuming that condition '(ringbuffer_read_status=lfds720_ringbuffer_n_read(fragment->ringbuffer_state,&key,NULL))!=1' is not redundant
+            while ((ringbuffer_read_status = lfds720_ringbuffer_n_read(fragment->ringbuffer_state, &key, NULL)) != 1) {
+                                                                                                                ^
+src/fbgraphics.c:951:36: note: Condition 'ringbuffer_read_status==1' is always true
+        if (ringbuffer_read_status == 1) {
+                                   ^
+src/fbgraphics.c:690:13: style: Local variable 'err' shadows outer variable [shadowVariable]
+        int err = pthread_create(&fbg->tasks[created_tasks], NULL, (void * (*)(void *))fbg_fragment, frag);
+            ^
+src/fbgraphics.c:550:9: note: Shadowed declaration
+    int err = pthread_barrier_init(sync_barrier, NULL, fbg->parallel_tasks);
+        ^
+src/fbgraphics.c:690:13: note: Shadow variable
+        int err = pthread_create(&fbg->tasks[created_tasks], NULL, (void * (*)(void *))fbg_fragment, frag);
+            ^
+src/fbgraphics.c:934:32: style: Variable 'ringbuffer_read_status' is assigned a value that is never used. [unreadVariable]
+    int ringbuffer_read_status = 0;
+                               ^
+src/fbgraphics.c:503:44: style: Condition 'fbg_fragment->sync_wait==1' is always true [knownConditionTrueFalse]
+            while (fbg_fragment->sync_wait == 1 && fbg_fragment->state);
+                                           ^
+src/fbgraphics.c:502:39: note: Assignment 'fbg_fragment->sync_wait=1', assigned value is 1
+            fbg_fragment->sync_wait = 1;
+                                      ^
+src/fbgraphics.c:503:44: note: Condition 'fbg_fragment->sync_wait==1' is always true
+            while (fbg_fragment->sync_wait == 1 && fbg_fragment->state);
+                                           ^
+src/stb/stb_image.h:1083:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(retval_from_stbi_load);
+^
+src/stb/stb_image.h:1182:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(orig);
+^
+src/stb/stb_image.h:1198:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(orig);
+^
+src/stb/stb_image.h:1745:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(data);
+^
+src/stb/stb_image.h:1770:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         default: STBI_ASSERT(0); STBI_FREE(data); STBI_FREE(good); return stbi__errpuc("unsupported", "Unsupported format conversion");
+^
+src/stb/stb_image.h:1775:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(data);
+^
+src/stb/stb_image.h:1802:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(data);
+^
+src/stb/stb_image.h:1827:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         default: STBI_ASSERT(0); STBI_FREE(data); STBI_FREE(good); return (stbi__uint16*) stbi__errpuc("unsupported", "Unsupported format conversion");
+^
+src/stb/stb_image.h:1832:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(data);
+^
+src/stb/stb_image.h:1844:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (output == NULL) { STBI_FREE(data); return stbi__errpf("outofmem", "Out of memory"); }
+^
+src/stb/stb_image.h:1857:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(data);
+^
+src/stb/stb_image.h:1870:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (output == NULL) { STBI_FREE(data); return stbi__errpuc("outofmem", "Out of memory"); }
+^
+src/stb/stb_image.h:1887:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(data);
+^
+src/stb/stb_image.h:3212:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         STBI_FREE(z->img_comp[i].raw_data);
+^
+src/stb/stb_image.h:3217:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         STBI_FREE(z->img_comp[i].raw_coeff);
+^
+src/stb/stb_image.h:3222:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         STBI_FREE(z->img_comp[i].linebuf);
+^
+src/stb/stb_image.h:3983:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(j);
+^
+src/stb/stb_image.h:3996:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(j);
+^
+src/stb/stb_image.h:4019:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(j);
+^
+src/stb/stb_image.h:4453:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(a.zout_start);
+^
+src/stb/stb_image.h:4474:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(a.zout_start);
+^
+src/stb/stb_image.h:4501:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(a.zout_start);
+^
+src/stb/stb_image.h:4830:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+            STBI_FREE(final);
+^
+src/stb/stb_image.h:4841:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         STBI_FREE(a->out);
+^
+src/stb/stb_image.h:4930:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(a->out);
+^
+src/stb/stb_image.h:5145:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+            STBI_FREE(z->idata); z->idata = NULL;
+^
+src/stb/stb_image.h:5171:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+            STBI_FREE(z->expanded); z->expanded = NULL;
+^
+src/stb/stb_image.h:5224:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(p->out);      p->out      = NULL;
+^
+src/stb/stb_image.h:5225:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(p->expanded); p->expanded = NULL;
+^
+src/stb/stb_image.h:5226:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(p->idata);    p->idata    = NULL;
+^
+src/stb/stb_image.h:5523:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      if (psize == 0 || psize > 256) { STBI_FREE(out); return stbi__errpuc("invalid", "Corrupt BMP"); }
+^
+src/stb/stb_image.h:5535:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      else { STBI_FREE(out); return stbi__errpuc("bad bpp", "Corrupt BMP"); }
+^
+src/stb/stb_image.h:5592:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         if (!mr || !mg || !mb) { STBI_FREE(out); return stbi__errpuc("bad masks", "Corrupt BMP"); }
+^
+src/stb/stb_image.h:5598:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         if (rcount > 8 || gcount > 8 || bcount > 8 || acount > 8) { STBI_FREE(out); return stbi__errpuc("bad masks", "Corrupt BMP"); }
+^
+src/stb/stb_image.h:5866:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+            STBI_FREE(tga_data);
+^
+src/stb/stb_image.h:5875:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+            STBI_FREE(tga_data);
+^
+src/stb/stb_image.h:5886:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+               STBI_FREE(tga_data);
+^
+src/stb/stb_image.h:5887:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+               STBI_FREE(tga_palette);
+^
+src/stb/stb_image.h:5968:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         STBI_FREE( tga_palette );
+^
+src/stb/stb_image.h:6160:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+               STBI_FREE(out);
+^
+src/stb/stb_image.h:6452:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(result);
+^
+src/stb/stb_image.h:6566:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(g);
+^
+src/stb/stb_image.h:6572:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(g);
+^
+src/stb/stb_image.h:6876:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(g->out);
+^
+src/stb/stb_image.h:6877:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(g->history);
+^
+src/stb/stb_image.h:6878:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(g->background);
+^
+src/stb/stb_image.h:6880:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (out) STBI_FREE(out);
+^
+src/stb/stb_image.h:6881:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (delays && *delays) STBI_FREE(*delays);
+^
+src/stb/stb_image.h:6955:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(g.out);
+^
+src/stb/stb_image.h:6956:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(g.history);
+^
+src/stb/stb_image.h:6957:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(g.background);
+^
+src/stb/stb_image.h:6989:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+      STBI_FREE(g.out);
+^
+src/stb/stb_image.h:6993:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(g.history);
+^
+src/stb/stb_image.h:6994:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   STBI_FREE(g.background);
+^
+src/stb/stb_image.h:7167:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+            STBI_FREE(scanline);
+^
+src/stb/stb_image.h:7172:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         if (len != width) { STBI_FREE(hdr_data); STBI_FREE(scanline); return stbi__errpf("invalid decoded scanline length", "corrupt HDR"); }
+^
+src/stb/stb_image.h:7176:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+               STBI_FREE(hdr_data);
+^
+src/stb/stb_image.h:7190:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+                  if (count > nleft) { STBI_FREE(hdr_data); STBI_FREE(scanline); return stbi__errpf("corrupt", "bad RLE data in HDR"); }
+^
+src/stb/stb_image.h:7195:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+                  if (count > nleft) { STBI_FREE(hdr_data); STBI_FREE(scanline); return stbi__errpf("corrupt", "bad RLE data in HDR"); }
+^
+src/stb/stb_image.h:7205:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_FREE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+         STBI_FREE(scanline);
+^
+src/stb/stb_image.h:984:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_MALLOC' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    return STBI_MALLOC(size);
+^
+src/stb/stb_image.h:4217:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_REALLOC_SIZED' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   q = (char *) STBI_REALLOC_SIZED(z->zout_start, old_limit, limit);
+^
+src/stb/stb_image.h:5127:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_REALLOC_SIZED' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+               p = (stbi_uc *) STBI_REALLOC_SIZED(z->idata, idata_limit_old, idata_limit); if (p == NULL) return stbi__err("outofmem", "Out of memory");
+^
+src/stb/stb_image.h:6916:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_REALLOC_SIZED' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+               void *tmp = (stbi_uc*) STBI_REALLOC_SIZED( out, out_size, layers * stride );
+^
+src/stb/stb_image.h:6925:0: information: Skipping configuration 'STBI_FREE;STBI_MALLOC;STBI_REALLOC;STBI_REALLOC_SIZED' since the value of 'STBI_REALLOC_SIZED' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+                  int *new_delays = (int*) STBI_REALLOC_SIZED( *delays, delays_size, sizeof(int) * layers );
+^
+src/stb/stb_image.h:3782:25: style: Variable 'j->idct_block_kernel' is reassigned a value before the old one has been used. [redundantAssignment]
+   j->idct_block_kernel = stbi__idct_simd;
+                        ^
+src/stb/stb_image.h:3769:25: note: j->idct_block_kernel is assigned
+   j->idct_block_kernel = stbi__idct_block;
+                        ^
+src/stb/stb_image.h:3782:25: note: j->idct_block_kernel is overwritten
+   j->idct_block_kernel = stbi__idct_simd;
+                        ^
+src/stb/stb_image.h:3783:27: style: Variable 'j->YCbCr_to_RGB_kernel' is reassigned a value before the old one has been used. [redundantAssignment]
+   j->YCbCr_to_RGB_kernel = stbi__YCbCr_to_RGB_simd;
+                          ^
+src/stb/stb_image.h:3770:27: note: j->YCbCr_to_RGB_kernel is assigned
+   j->YCbCr_to_RGB_kernel = stbi__YCbCr_to_RGB_row;
+                          ^
+src/stb/stb_image.h:3783:27: note: j->YCbCr_to_RGB_kernel is overwritten
+   j->YCbCr_to_RGB_kernel = stbi__YCbCr_to_RGB_simd;
+                          ^
+src/stb/stb_image.h:3784:32: style: Variable 'j->resample_row_hv_2_kernel' is reassigned a value before the old one has been used. [redundantAssignment]
+   j->resample_row_hv_2_kernel = stbi__resample_row_hv_2_simd;
+                               ^
+src/stb/stb_image.h:3771:32: note: j->resample_row_hv_2_kernel is assigned
+   j->resample_row_hv_2_kernel = stbi__resample_row_hv_2;
+                               ^
+src/stb/stb_image.h:3784:32: note: j->resample_row_hv_2_kernel is overwritten
+   j->resample_row_hv_2_kernel = stbi__resample_row_hv_2_simd;
+                               ^
+src/stb/stb_image.h:6921:29: style: Variable 'out_size' is assigned a value that is never used. [unreadVariable]
+                   out_size = layers * stride;
+                            ^
+src/stb/stb_image.h:6929:31: style: Variable 'delays_size' is assigned a value that is never used. [unreadVariable]
+                  delays_size = layers * sizeof(int);
+                              ^
+src/stb/stb_image.h:6935:25: style: Variable 'out_size' is assigned a value that is never used. [unreadVariable]
+               out_size = layers * stride;
+                        ^
+src/stb/stb_image.h:6940:31: style: Variable 'delays_size' is assigned a value that is never used. [unreadVariable]
+                  delays_size = layers * sizeof(int);
+                              ^
+src/lodepng/lodepng.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 33 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/lodepng/lodepng.c:3700:24: style: Condition 'numcolors_done' is always true [knownConditionTrueFalse]
+      if(alpha_done && numcolors_done && colored_done && bits_done) break;
+                       ^
+src/lodepng/lodepng.c:3664:34: note: Assignment 'numcolors_done=1', assigned value is 1
+    bits_done = numcolors_done = 1; /*counting colors no longer useful, palette doesn't support 16-bit*/
+                                 ^
+src/lodepng/lodepng.c:3700:24: note: Condition 'numcolors_done' is always true
+      if(alpha_done && numcolors_done && colored_done && bits_done) break;
+                       ^
+src/lodepng/lodepng.c:3700:58: style: Condition 'bits_done' is always true [knownConditionTrueFalse]
+      if(alpha_done && numcolors_done && colored_done && bits_done) break;
+                                                         ^
+src/lodepng/lodepng.c:3664:0: note: Assignment 'bits_done=1', assigned value is 1
+    bits_done = numcolors_done = 1; /*counting colors no longer useful, palette doesn't support 16-bit*/
+^
+src/lodepng/lodepng.c:3700:58: note: Condition 'bits_done' is always true
+      if(alpha_done && numcolors_done && colored_done && bits_done) break;
+                                                         ^
+src/lodepng/lodepng.c:5340:8: style: Condition '!error' is always true [knownConditionTrueFalse]
+    if(!error)
+       ^
+src/lodepng/lodepng.c:5294:20: note: Assignment 'error=0', assigned value is 0
+  unsigned error = 0;
+                   ^
+src/lodepng/lodepng.c:5313:10: note: Assuming condition is false
+  if(bpp == 0) return 31; /*error: invalid color type*/
+         ^
+src/lodepng/lodepng.c:5340:8: note: Condition '!error' is always true
+    if(!error)
+       ^
+src/lodepng/lodepng.c:314:31: style: The scope of the variable 'i' can be reduced. [variableScope]
+  size_t insize = strlen(in), i;
+                              ^
+src/lodepng/lodepng.c:624:12: style: The scope of the variable 'bits' can be reduced. [variableScope]
+  unsigned bits, n;
+           ^
+src/lodepng/lodepng.c:624:18: style: The scope of the variable 'n' can be reduced. [variableScope]
+  unsigned bits, n;
+                 ^
+src/lodepng/lodepng.c:708:12: style: The scope of the variable 'i' can be reduced. [variableScope]
+  unsigned i;
+           ^
+src/lodepng/lodepng.c:958:25: style: The scope of the variable 'ct' can be reduced. [variableScope]
+  unsigned treepos = 0, ct;
+                        ^
+src/lodepng/lodepng.c:1168:21: style: The scope of the variable 'forward' can be reduced. [variableScope]
+      size_t start, forward, backward, length;
+                    ^
+src/lodepng/lodepng.c:1495:12: style: The scope of the variable 'offset' can be reduced. [variableScope]
+  unsigned offset; /*the offset represents the distance in LZ77 terminology*/
+           ^
+src/lodepng/lodepng.c:1496:12: style: The scope of the variable 'length' can be reduced. [variableScope]
+  unsigned length;
+           ^
+src/lodepng/lodepng.c:1499:12: style: The scope of the variable 'hashval' can be reduced. [variableScope]
+  unsigned hashval;
+           ^
+src/lodepng/lodepng.c:1501:12: style: The scope of the variable 'prev_offset' can be reduced. [variableScope]
+  unsigned prev_offset;
+           ^
+src/lodepng/lodepng.c:1502:24: style: The scope of the variable 'lastptr' can be reduced. [variableScope]
+  const unsigned char *lastptr, *foreptr, *backptr;
+                       ^
+src/lodepng/lodepng.c:1503:12: style: The scope of the variable 'hashpos' can be reduced. [variableScope]
+  unsigned hashpos;
+           ^
+src/lodepng/lodepng.c:1773:10: style: The scope of the variable 'numcodes_ll' can be reduced. [variableScope]
+  size_t numcodes_ll, numcodes_d, i;
+         ^
+src/lodepng/lodepng.c:1773:23: style: The scope of the variable 'numcodes_d' can be reduced. [variableScope]
+  size_t numcodes_ll, numcodes_d, i;
+                      ^
+src/lodepng/lodepng.c:1774:12: style: The scope of the variable 'HLIT' can be reduced. [variableScope]
+  unsigned HLIT, HDIST, HCLEN;
+           ^
+src/lodepng/lodepng.c:1774:18: style: The scope of the variable 'HDIST' can be reduced. [variableScope]
+  unsigned HLIT, HDIST, HCLEN;
+                 ^
+src/lodepng/lodepng.c:1774:25: style: The scope of the variable 'HCLEN' can be reduced. [variableScope]
+  unsigned HLIT, HDIST, HCLEN;
+                        ^
+src/lodepng/lodepng.c:1987:10: style: The scope of the variable 'i' can be reduced. [variableScope]
+  size_t i;
+         ^
+src/lodepng/lodepng.c:2202:10: style: The scope of the variable 'i' can be reduced. [variableScope]
+  size_t i;
+         ^
+src/lodepng/lodepng.c:2608:10: style: The scope of the variable 'i' can be reduced. [variableScope]
+  size_t i;
+         ^
+src/lodepng/lodepng.c:3827:10: style: The scope of the variable 'i' can be reduced. [variableScope]
+  size_t i, n;
+         ^
+src/lodepng/lodepng.c:4300:12: style: The scope of the variable 'i' can be reduced. [variableScope]
+  unsigned i;
+           ^
+src/lodepng/lodepng.c:4416:20: style: The scope of the variable 'string2_begin' can be reduced. [variableScope]
+  unsigned length, string2_begin;
+                   ^
+src/lodepng/lodepng.c:4465:20: style: The scope of the variable 'begin' can be reduced. [variableScope]
+  unsigned length, begin, compressed;
+                   ^
+src/lodepng/lodepng.c:4465:27: style: The scope of the variable 'compressed' can be reduced. [variableScope]
+  unsigned length, begin, compressed;
+                          ^
+src/lodepng/lodepng.c:4998:10: style: The scope of the variable 'i' can be reduced. [variableScope]
+  size_t i;
+         ^
+src/lodepng/lodepng.c:5331:12: style: The scope of the variable 'smallest' can be reduced. [variableScope]
+    size_t smallest = 0;
+           ^
+src/lodepng/lodepng.c:5332:25: style: The scope of the variable 'bestType' can be reduced. [variableScope]
+    unsigned char type, bestType = 0;
+                        ^
+src/lodepng/lodepng.c:2367:45: style:inconclusive: Function 'lodepng_crc32' argument 1 names different: declaration 'buf' definition 'data'. [funcArgNamesDifferent]
+unsigned lodepng_crc32(const unsigned char* data, size_t length)
+                                            ^
+src/lodepng/lodepng.h:742:45: note: Function 'lodepng_crc32' argument 1 names different: declaration 'buf' definition 'data'.
+unsigned lodepng_crc32(const unsigned char* buf, size_t len);
+                                            ^
+src/lodepng/lodepng.c:2367:45: note: Function 'lodepng_crc32' argument 1 names different: declaration 'buf' definition 'data'.
+unsigned lodepng_crc32(const unsigned char* data, size_t length)
+                                            ^
+src/lodepng/lodepng.c:2367:58: style:inconclusive: Function 'lodepng_crc32' argument 2 names different: declaration 'len' definition 'length'. [funcArgNamesDifferent]
+unsigned lodepng_crc32(const unsigned char* data, size_t length)
+                                                         ^
+src/lodepng/lodepng.h:742:57: note: Function 'lodepng_crc32' argument 2 names different: declaration 'len' definition 'length'.
+unsigned lodepng_crc32(const unsigned char* buf, size_t len);
+                                                        ^
+src/lodepng/lodepng.c:2367:58: note: Function 'lodepng_crc32' argument 2 names different: declaration 'len' definition 'length'.
+unsigned lodepng_crc32(const unsigned char* data, size_t length)
+                                                         ^
+src/lodepng/lodepng.c:3625:57: style:inconclusive: Function 'lodepng_get_color_profile' argument 2 names different: declaration 'image' definition 'in'. [funcArgNamesDifferent]
+                                   const unsigned char* in, unsigned w, unsigned h,
+                                                        ^
+src/lodepng/lodepng.h:580:57: note: Function 'lodepng_get_color_profile' argument 2 names different: declaration 'image' definition 'in'.
+                                   const unsigned char* image, unsigned w, unsigned h,
+                                                        ^
+src/lodepng/lodepng.c:3625:57: note: Function 'lodepng_get_color_profile' argument 2 names different: declaration 'image' definition 'in'.
+                                   const unsigned char* in, unsigned w, unsigned h,
+                                                        ^
+src/lodepng/lodepng.c:3626:60: style:inconclusive: Function 'lodepng_get_color_profile' argument 5 names different: declaration 'mode_in' definition 'mode'. [funcArgNamesDifferent]
+                                   const LodePNGColorMode* mode)
+                                                           ^
+src/lodepng/lodepng.h:581:60: note: Function 'lodepng_get_color_profile' argument 5 names different: declaration 'mode_in' definition 'mode'.
+                                   const LodePNGColorMode* mode_in);
+                                                           ^
+src/lodepng/lodepng.c:3626:60: note: Function 'lodepng_get_color_profile' argument 5 names different: declaration 'mode_in' definition 'mode'.
+                                   const LodePNGColorMode* mode)
+                                                           ^
+src/lodepng/lodepng.c:3713:22: style: Variable 'alpha_done' is assigned a value that is never used. [unreadVariable]
+          alpha_done = 1;
+                     ^
+src/lodepng/lodepng.c:3799:22: style: Variable 'alpha_done' is assigned a value that is never used. [unreadVariable]
+          alpha_done = 1;
+                     ^
+src/lodepng/lodepng.c:66:0: information: Skipping configuration 'LODEPNG_COMPILE_ALLOCATORS;LODEPNG_MAX_ALLOC' since the value of 'LODEPNG_MAX_ALLOC' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  if(size > LODEPNG_MAX_ALLOC) return 0;
+^
+src/lodepng/lodepng.c:74:0: information: Skipping configuration 'LODEPNG_COMPILE_ALLOCATORS;LODEPNG_MAX_ALLOC' since the value of 'LODEPNG_MAX_ALLOC' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  if(new_size > LODEPNG_MAX_ALLOC) return 0;
+^
+src/lodepng/lodepng.h:199:1: error: Code 'namespacelodepng{' is invalid C code. Use --std or --language to configure the language. [syntaxError]
+namespace lodepng
+^
+src/nanojpeg/nanojpeg.c:578:27: style: The scope of the variable 'remain' can be reduced. [variableScope]
+    int codelen, currcnt, remain, spread, i, j;
+                          ^
+src/nanojpeg/nanojpeg.c:578:35: style: The scope of the variable 'spread' can be reduced. [variableScope]
+    int codelen, currcnt, remain, spread, i, j;
+                                  ^
+src/nanojpeg/nanojpeg.c:578:43: style: The scope of the variable 'i' can be reduced. [variableScope]
+    int codelen, currcnt, remain, spread, i, j;
+                                          ^
+src/nanojpeg/nanojpeg.c:579:20: style: The scope of the variable 'vlc' can be reduced. [variableScope]
+    nj_vlc_code_t *vlc;
+                   ^
+src/nanojpeg/nanojpeg.c:619:9: style: The scope of the variable 'i' can be reduced. [variableScope]
+    int i;
+        ^
+src/nanojpeg/nanojpeg.c:620:20: style: The scope of the variable 't' can be reduced. [variableScope]
+    unsigned char *t;
+                   ^
+src/nanojpeg/nanojpeg.c:660:9: style: The scope of the variable 'value' can be reduced. [variableScope]
+    int value, coef = 0;
+        ^
+src/nanojpeg/nanojpeg.c:766:26: style: The scope of the variable 'cin' can be reduced. [variableScope]
+    unsigned char *out, *cin, *cout;
+                         ^
+src/nanojpeg/nanojpeg.c:766:32: style: The scope of the variable 'cout' can be reduced. [variableScope]
+    unsigned char *out, *cin, *cout;
+                               ^
+src/nanojpeg/nanojpeg.c:654:24: portability: Shifting a negative value is technically undefined behaviour [shiftNegativeLHS]
+        value += ((-1) << bits) + 1;
+                       ^
+src/fbgraphics.c:1041:0: style: The function 'fbg_background' is never used. [unusedFunction]
+
+^
+src/fbgraphics.c:1025:0: style: The function 'fbg_fadeUp' is never used. [unusedFunction]
+
+^
+custom_backend/fbdev/fbg_fbdev.c:16:0: style: The function 'fbg_fbdevSetup' is never used. [unusedFunction]
+
+^
+src/fbgraphics.c:748:0: style: The function 'fbg_fpixel' is never used. [unusedFunction]
+
+^
+src/fbgraphics.c:422:0: style: The function 'fbg_fragmentState' is never used. [unusedFunction]
+
+^
+src/fbgraphics.c:403:0: style: The function 'fbg_getFramerate' is never used. [unusedFunction]
+
+^
+custom_backend/opengl_es2/fbg_opengl_es2.c:551:0: style: The function 'fbg_gles2CreateProgramFromFiles' is never used. [unusedFunction]
+
+^
+custom_backend/opengl_es2/fbg_opengl_es2.c:301:0: style: The function 'fbg_gles2CreateTextureFromImage' is never used. [unusedFunction]
+
+^
+custom_backend/opengl_es2/fbg_opengl_es2.c:374:0: style: The function 'fbg_gles2CreateVBO' is never used. [unusedFunction]
+
+^
+custom_backend/opengl_es2/fbg_opengl_es2.c:436:0: style: The function 'fbg_gles2FreeVBOData' is never used. [unusedFunction]
+
+^
+custom_backend/opengl_es2/fbg_opengl_es2.c:235:0: style: The function 'fbg_gles2UpdateBuffer' is never used. [unusedFunction]
+
+^
+custom_backend/glfw/fbg_glfw.c:355:0: style: The function 'fbg_glfwCreateFBO' is never used. [unusedFunction]
+
+^
+custom_backend/glfw/fbg_glfw.c:203:0: style: The function 'fbg_glfwFullscreen' is never used. [unusedFunction]
+
+^
+custom_backend/glfw/fbg_glfw.c:245:0: style: The function 'fbg_glfwUpdateBuffer' is never used. [unusedFunction]
+
+^
+src/fbgraphics.c:1534:0: style: The function 'fbg_imageColorkey' is never used. [unusedFunction]
+
+^
+src/fbgraphics.c:1593:0: style: The function 'fbg_imageEx' is never used. [unusedFunction]
+
+^
+src/fbgraphics.c:1578:0: style: The function 'fbg_imageFlip' is never used. [unusedFunction]
+
+^
+src/fbgraphics.c:1505:0: style: The function 'fbg_loadImageFromMemory' is never used. [unusedFunction]
+
+^
+src/fbgraphics.c:754:0: style: The function 'fbg_plot' is never used. [unusedFunction]
+
+^
+src/fbgraphics.c:1092:0: style: The function 'fbg_rgbToHsl' is never used. [unusedFunction]
+
+^
+src/fbgraphics.c:1186:0: style: The function 'fbg_textBackground' is never used. [unusedFunction]
+
+^
+src/fbgraphics.c:1182:0: style: The function 'fbg_textColorKey' is never used. [unusedFunction]
+
+^
+custom_backend/glfw/glew/glew.c:16146:0: style: The function 'glewGetExtension' is never used. [unusedFunction]
+
+^
+custom_backend/glfw/glew/glew.c:20893:0: style: The function 'glewIsSupported' is never used. [unusedFunction]
+
+^
+custom_backend/glfw/glew/glew.c:27064:0: style: The function 'glxewIsSupported' is never used. [unusedFunction]
+
+^
+src/lodepng/lodepng.c:2462:0: style: The function 'lodepng_chunk_data' is never used. [unusedFunction]
+
+^
+src/lodepng/lodepng.c:2452:0: style: The function 'lodepng_chunk_private' is never used. [unusedFunction]
+
+^
+src/lodepng/lodepng.c:2457:0: style: The function 'lodepng_chunk_safetocopy' is never used. [unusedFunction]
+
+^
+src/lodepng/lodepng.c:2434:0: style: The function 'lodepng_chunk_type' is never used. [unusedFunction]
+
+^
+src/lodepng/lodepng.c:2926:0: style: The function 'lodepng_clear_itext' is never used. [unusedFunction]
+
+^
+src/lodepng/lodepng.c:2854:0: style: The function 'lodepng_clear_text' is never used. [unusedFunction]
+
+^
+src/lodepng/lodepng.c:4853:0: style: The function 'lodepng_decode24' is never used. [unusedFunction]
+
+^
+src/lodepng/lodepng.c:4848:0: style: The function 'lodepng_decode32' is never used. [unusedFunction]
+
+^
+src/lodepng/lodepng.c:5923:0: style: The function 'lodepng_encode24' is never used. [unusedFunction]
+
+^
+src/lodepng/lodepng.c:5945:0: style: The function 'lodepng_encode24_file' is never used. [unusedFunction]
+
+^
+src/lodepng/lodepng.c:5918:0: style: The function 'lodepng_encode32' is never used. [unusedFunction]
+
+^
+src/lodepng/lodepng.c:5940:0: style: The function 'lodepng_encode32_file' is never used. [unusedFunction]
+
+^
+src/lodepng/lodepng.c:2674:0: style: The function 'lodepng_get_channels' is never used. [unusedFunction]
+
+^
+src/lodepng/lodepng.c:3017:0: style: The function 'lodepng_info_swap' is never used. [unusedFunction]
+
+^
+src/lodepng/lodepng.c:2689:0: style: The function 'lodepng_is_palette_type' is never used. [unusedFunction]
+
+^
+src/lodepng/lodepng.c:4918:0: style: The function 'lodepng_state_copy' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
